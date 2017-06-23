@@ -10,13 +10,23 @@ body {
 
 main {
 	width: 100%;
+	padding: 0;
 }
-
+video {
+	width: 640px;
+	margin: 0 auto;
+}
 .p-wrap {
 	width: 100%;
-	padding: 0 10%;
+	padding: 0 50px;
 }
 .p-wrap p {
 	margin: 0 auto;
 	font-size: 1.3em;
+}
+
+.video {
+	width:80%;
+	max-width: 640px;
+	margin: 0 auto;
 }
