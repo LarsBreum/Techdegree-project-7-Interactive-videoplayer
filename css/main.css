@@ -13,7 +13,6 @@ main {
 	padding: 0;
 }
 video {
-	width: 640px;
 	margin: 0 auto;
 }
 .p-wrap {
@@ -23,10 +22,15 @@ video {
 .p-wrap p {
 	margin: 0 auto;
 	font-size: 1.3em;
+	max-width: 800px;
 }
 
-.video {
-	width:80%;
-	max-width: 640px;
+.videoWrap {
 	margin: 0 auto;
+}
+@media (min-width: 768px) {
+	.wrapper {
+		max-width: 768px;
+		margin: 0 auto;
+	}
 }
