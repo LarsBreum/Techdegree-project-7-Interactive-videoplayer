@@ -5,9 +5,8 @@ $(document).ready( function () {
 		return document.querySelectorAll(selector);
 	}
 
-	const p = getElements('p');
-	console.log(p);
-
+	let $allPs = $('p');
+	console.log($allPs);
 		
 
 	$('video').on('play', function () {
