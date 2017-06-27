@@ -3,25 +3,22 @@ $('video').mediaelementplayer();
 
 //declaring consts and variables
 const vid = document.getElementsByTagName("video")[0];
-let allPs = document.querySelectorAll('p');
+let allSpans = document.querySelectorAll('.trans');
 let breaks = [4.130, 7.535, 11.270, 13.960, 22.370,
 				26.880, 32.100, 34.730,];
 
 //change color
 function changeFontWeight (elementNum, weight="bold") {
 	if (elementNum > 0) {
-		allPs[elementNum - 1].style.fontWeight = "normal";
-		allPs[elementNum].style.fontWeight = weight;
+		allSpans[elementNum - 1].style.fontWeight = "normal";
+		allSpans[elementNum].style.fontWeight = weight;
 	} else {
-		allPs[elementNum].style.fontWeight = weight;
+		allSpans[elementNum].style.fontWeight = weight;
 	}
 	
 }
 //highlight the p
 function highlight (time) {
-		if (time >= 0) {
-		changeFontWeight(0);			
-		}
 		if (time >= breaks[0]) {
 			changeFontWeight(1);
 		} 
@@ -66,12 +63,13 @@ function highlight (time) {
 		}
 		if (time >= 57.780) {
 			changeFontWeight(15);
-		} 
+		}  
 		vid.addEventListener("ended", () => {
-			allPs[15].style.fontWeight = "normal";
+			changeFontWeight(15, 'normal');
 		});
 }
 vid.addEventListener("play", () => {
+	changeFontWeight(0);
 	//Getting elapsed time of video
 	vid.addEventListener("timeupdate", () => {
 		let time = vid.currentTime;
@@ -80,6 +78,8 @@ vid.addEventListener("play", () => {
 		
 	})
 });
+
+
 	
 
 
