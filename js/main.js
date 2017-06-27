@@ -4,73 +4,83 @@ $('video').mediaelementplayer();
 //declaring consts and variables
 const vid = document.getElementsByTagName("video")[0];
 let allPs = document.querySelectorAll('p');
+let breaks = [4.130, 7.535, 11.270, 13.960, 22.370,
+				26.880, 32.100, 34.730,];
 
 //change color
-function changeColor (elementNum, color="orange") {
+function changeFontWeight (elementNum, weight="bold") {
 	if (elementNum > 0) {
-		allPs[elementNum - 1].style.color = "black";
-		allPs[elementNum].style.color = color;
+		allPs[elementNum - 1].style.fontWeight = "normal";
+		allPs[elementNum].style.fontWeight = weight;
 	} else {
-		allPs[elementNum].style.color = color;
+		allPs[elementNum].style.fontWeight = weight;
 	}
 	
 }
 //highlight the p
 function highlight (time) {
-		changeColor(0);
-		if (time >= 4.130) {
-			changeColor(1);
+		if (time >= 0) {
+		changeFontWeight(0);			
+		}
+		if (time >= breaks[0]) {
+			changeFontWeight(1);
 		} 
 		if (time >= 7.535) {
-			changeColor(2);
+			changeFontWeight(2);
 		}
 		if (time >= 11.270) {
-			changeColor(3);
+			changeFontWeight(3);
 		}
 		if (time >= 13.960) {
-			changeColor(4);
+			changeFontWeight(4);
 		}
 		if (time >= 17.940) {
-			changeColor(5);
+			changeFontWeight(5);
 		}
 		if (time >= 22.370) {
-			changeColor(6);
+			changeFontWeight(6);
 		}
 		if (time >= 26.880) {
-			changeColor(7);
+			changeFontWeight(7);
 		}
 		if (time >= 32.100) {
-			changeColor(8);
+			changeFontWeight(8);
 		}
 		if (time >= 34.730) {
-			changeColor(9);
+			changeFontWeight(9);
 		}
 		if (time >= 39.430) {
-			changeColor(10);
+			changeFontWeight(10);
 		}
 		if (time >= 42.350) {
-			changeColor(11);
+			changeFontWeight(11);
 		}
 		if (time >= 46.300) {
-			changeColor(12);
+			changeFontWeight(12);
 		}
 		if (time >= 49.300) {
-			changeColor(13);
+			changeFontWeight(13);
 		}
 		if (time >= 53.760) {
-			changeColor(14);
+			changeFontWeight(14);
 		}
 		if (time >= 57.780) {
-			changeColor(15);
-		}
+			changeFontWeight(15);
+		} 
+		vid.addEventListener("ended", () => {
+			allPs[15].style.fontWeight = "normal";
+		});
 }
-//Getting elapsed time of video
-vid.addEventListener("timeupdate", () => {
-	let time = vid.currentTime;
-	console.log("Time = " + time);
-	highlight(time);
+vid.addEventListener("play", () => {
+	//Getting elapsed time of video
+	vid.addEventListener("timeupdate", () => {
+		let time = vid.currentTime;
+		console.log("Time = " + time);
+		highlight(time);
+		
+	})
+});
 	
-})
 
 
 
