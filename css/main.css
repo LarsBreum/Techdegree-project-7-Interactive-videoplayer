@@ -33,11 +33,17 @@ video {
 		margin: 0 auto;
 	}
 }
-.mejs__controls {
-	color: red;
+.mejs__controls *,
+.mejs__time-loaded,
+.mejs__button{
+	color: orange;
 }
-span {
-	transition: font-weight 2s ease-in-out;
+a[data-time] {
+	cursor: pointer;
+}
+a[data-time]:hover {
+	color: orange;
+	font-weight: bold;
 }
 .active {
 	font-weight: bold;
