@@ -3,19 +3,12 @@ $('video').mediaelementplayer();
 
 //declaring consts and variables
 const vid = document.getElementsByTagName("video")[0];
-const allSpans = document.querySelectorAll('span');
+const allSpans = document.querySelectorAll('span[data-time]');
+console.log(allSpans);
 
-//change color
-/*function changeFontWeight (elementNum, weight="bold") {
-	if (elementNum > 0) {
-		allSpans[elementNum - 1].style.fontWeight = "normal";
-		allSpans[elementNum].style.fontWeight = weight;
-	} else {
-		allSpans[elementNum].style.fontWeight = weight;
-	}
-	
-}*/
+
 function highlight(time) {
+	allSpans[0].classList.add('active');
 	for (let i = 1; i <= allSpans.length; i++) {
 		const dataTime = allSpans[i].getAttribute('data-time');
 		if(dataTime <= time) {
@@ -26,15 +19,19 @@ function highlight(time) {
 }
 //Video starts
 vid.addEventListener("play", () => {
-	allSpans[0].classList.add('active');
 	//Getting elapsed time of video
 	vid.addEventListener("timeupdate", () => {
 		let time = vid.currentTime;
 		console.log("Time = " + time);
 		highlight(time);
 	})
+});	
+//video ends and removes active class
+vid.addEventListener('ended', () => {
+	for (let i = 0; i <= allSpans.length; i++) {
+		allSpans[i].classList.remove('active');
+	}
 });
-
 
 	
 
