@@ -33,3 +33,12 @@ video {
 		margin: 0 auto;
 	}
 }
+.mejs__controls {
+	color: red;
+}
+span {
+	transition: font-weight 2s ease-in-out;
+}
+.active {
+	font-weight: bold;
+}
