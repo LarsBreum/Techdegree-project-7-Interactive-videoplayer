@@ -18,18 +18,19 @@ video {
 .p-wrap {
 	width: 100%;
 	padding: 0 50px;
+	margin: 50px 0;
 }
 .p-wrap p {
 	margin: 0 auto;
 	font-size: 1.3em;
-	max-width: 800px;
+	max-width: 95%;
 }
 .videoWrap {
 	margin: 0 auto;
 }
 @media (min-width: 768px) {
 	.wrapper {
-		max-width: 768px;
+		max-width: 80%;
 		margin: 0 auto;
 	}
 }
@@ -38,13 +39,21 @@ video {
 .mejs__button{
 	color: orange;
 }
-a[data-time] {
+span[data-start] {
 	cursor: pointer;
 }
-a[data-time]:hover {
+span[data-start]:hover {
 	color: orange;
 	font-weight: bold;
 }
 .active {
 	font-weight: bold;
+}
+.wrapper {
+	box-shadow: 0px 0px 8px #cecece;
+	width: 67%;
+}
+footer {
+	text-align: center;
+	color: #ccc;
 }
