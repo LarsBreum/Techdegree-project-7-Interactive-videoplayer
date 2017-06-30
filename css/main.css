@@ -19,6 +19,7 @@ video {
 	width: 100%;
 	padding: 0 50px;
 	margin: 20px 0;
+	margin: 9 auto;
 }
 .p-wrap p {
 	margin: 0 auto;
@@ -27,12 +28,7 @@ video {
 .videoWrap {
 	margin: 0 auto;
 }
-@media (min-width: 768px) {
-	.wrapper {
-		max-width: 80%;
-		margin: 0 auto;
-	}
-}
+
 span[data-start] {
 	cursor: pointer;
 }
@@ -45,7 +41,7 @@ span[data-start]:hover {
 }
 .wrapper {
 	box-shadow: 0px 0px 8px #cecece;
-	width: 60%;
+	margin: 0 auto;
 }
 footer {
 	text-align: center;
@@ -59,4 +55,10 @@ footer {
 
 .mejs__time-current {
     background: lightblue;
+}
+@media (min-width: 768px) {
+	.wrapper {
+		max-width: 60%;
+		margin: 0 auto;
+	}
 }
