@@ -1,4 +1,6 @@
-$('video').mediaelementplayer();
+$('video').mediaelementplayer({
+	
+});
 
 //declaring consts and variables
 const vid = document.getElementsByTagName("video")[0];

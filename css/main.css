@@ -18,11 +18,10 @@ video {
 .p-wrap {
 	width: 100%;
 	padding: 0 50px;
-	margin: 50px 0;
+	margin: 20px 0;
 }
 .p-wrap p {
 	margin: 0 auto;
-	font-size: 1.3em;
 	max-width: 95%;
 }
 .videoWrap {
@@ -34,16 +33,11 @@ video {
 		margin: 0 auto;
 	}
 }
-.mejs__controls *,
-.mejs__time-loaded,
-.mejs__button{
-	color: orange;
-}
 span[data-start] {
 	cursor: pointer;
 }
 span[data-start]:hover {
-	color: orange;
+	color: tomato;
 	font-weight: bold;
 }
 .active {
@@ -51,9 +45,18 @@ span[data-start]:hover {
 }
 .wrapper {
 	box-shadow: 0px 0px 8px #cecece;
-	width: 67%;
+	width: 60%;
 }
 footer {
 	text-align: center;
-	color: #ccc;
+	color: tomato;
+	font-style: italic;
+}
+.mejs__inner .mejs__controls {
+    background: coral;
+    color: black;
+}
+
+.mejs__time-current {
+    background: lightblue;
 }
